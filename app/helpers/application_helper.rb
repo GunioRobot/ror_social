@@ -1,5 +1,5 @@
 module ApplicationHelper
-  
+
   def title
     append_this = if params[:controller] == 'users'
       case params[:action]
@@ -13,7 +13,7 @@ module ApplicationHelper
     else
       nil
     end
-    
+
     append_this ? append_this + ' / ror_social' : 'ror_social'
   end
 end

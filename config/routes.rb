@@ -3,10 +3,10 @@ RorSocial::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   root :to => 'static#index'
-  
+
   resources :posts
   resources :users, :only => [:index, :show]
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

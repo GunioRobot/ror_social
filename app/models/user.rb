@@ -3,14 +3,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   attr_accessible :login, :email, :password, :password_confirmation, :remember_me
-  
+
   validates_presence_of :email
   validates_presence_of :login
   validates_presence_of :provider
   validates_presence_of :uid
-  
+
   has_many :posts
-  
+
   def self.new_with_session(params, session)
     super.tap do |u|
       if data = session["devise.oauth"]
@@ -23,11 +23,11 @@ class User < ActiveRecord::Base
       end
     end
   end
-  
+
   def using_oauth?
     !!self.provider
   end
-  
+
   def valid?(options = nil)
     super(options = nil)
     unless using_oauth?
@@ -37,10 +37,10 @@ class User < ActiveRecord::Base
       self.errors.delete :email
       self.errors.delete :password
     end
-    
+
     return self.errors.count == 0
   end
-  
+
   def self.find_for_oauth(oa)
     info = oa && oa['user_info']
 

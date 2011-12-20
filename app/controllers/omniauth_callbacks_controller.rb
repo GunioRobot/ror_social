@@ -3,7 +3,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook; end
   def twitter; end
   def vkontakte; end
-  
+
   protected
   def process_oauth_callback
     @user = User.find_for_oauth(env["omniauth.auth"])

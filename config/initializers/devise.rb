@@ -3,12 +3,12 @@ require 'openid/store/filesystem'
 # Use this hook to configure devise mailer, warden hooks and so forth. The first
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
-  
+
   #config.omniauth :open_id, OpenID::Store::Filesystem.new('/tmp')
   config.omniauth :facebook, '185890614790412', '0c340622c50b23c1b631e87a97e97877'
   config.omniauth :twitter, 'N9a02epkoL02IR05gEJqQ', 'FjKZRnCcN50T9zDaMbF4nHMbOsQ7PuhVJQlfFDYVM'
   config.omniauth :vkontakte, '2298668', 'TpmHKFNjnZrXpLSJf9ir'
-  
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
   config.mailer_sender = "robot@testvk.ru"

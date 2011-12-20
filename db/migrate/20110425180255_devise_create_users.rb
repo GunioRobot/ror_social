@@ -5,7 +5,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.recoverable
       t.rememberable
       t.trackable
-      
+
       t.string :login, :null => false
       t.string :provider
       t.string :uid
